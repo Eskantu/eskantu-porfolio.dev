@@ -1,39 +1,51 @@
 ---
 import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
+import Python from "./icons/Python.astro"
+import DotNet from "./icons/DotNet.astro"
+import Sqlite from "./icons/Sqlite.astro"
+import Flutter from "./icons/Flutter.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextJS,
+  PYTHON: {
+    name: "Python",
+    class: "bg-[#F5A801] text-white",
+    icon: Python,
   },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
+  DOTNET: {
+    name: "C# /.NET",
+    class: " text-white",
+    icon: DotNet,
+  },
+  SQLITE: {
+    name: "SQLite",
+    class: " text-white",
+    icon: Sqlite
+  },
+  FLUTTER: {
+    name: "Flutter",
+    class: "bg-[#02569b] text-white",
+    icon: Flutter
   },
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "PushPulseApp ",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Herramienta multiplataforma para monitoreo de repositorios Git, ya no mas commits olvidados.",
+    link: "https://pushpulseapp.com",
+    github: "https://github.com/eskantu/pushpulseapp",
+    image: "/projects/PushPulseTool.webp",
+    tags: [TAGS.PYTHON, TAGS.SQLITE],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "Taskly",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "App para gestionar tus tareas diarias, con notificaciones y recordatorios.",
+    link: "https://taskly.dev",
+    image: "/projects/Taskly.webp",
+    tags: [TAGS.DOTNET, TAGS.FLUTTER],
   },
 ]
 ---

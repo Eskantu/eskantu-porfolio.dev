@@ -1,0 +1,91 @@
+---
+interface Props {
+  size?: number | string;   // tamaño en px por defecto
+  title?: string;           // accesibilidad
+  class?: string;           // Tailwind classes
+}
+const { size = 64, title = 'Logo', class: className = '' } = Astro.props;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width={size}
+  height={size}
+  viewBox="0 0 1048 1048"
+  role="img"
+  aria-label={title}
+  class={className}
+>
+  {title && <title>{title}</title>}
+
+  <defs>
+    <path
+      id="shape"
+      d="M959.4 500L679.8 779.7l279.6 279.7H639.9L360.2 779.7 639.9 500h319.5zM639.9 20.7L120.6 540l159.8 159.8 679-679.1H639.9z"
+    />
+    <clipPath id="clipA"><use href="#shape"/></clipPath>
+    <clipPath id="clipB"><use href="#shape"/></clipPath>
+    <clipPath id="clipC"><use href="#shape"/></clipPath>
+    <clipPath id="clipD"><use href="#shape"/></clipPath>
+    <radialGradient
+      id="gradOverlay"
+      cx="7824.659"
+      cy="-2855.979"
+      r="5082.889"
+      gradientTransform="matrix(0.25,0,0,-0.25,-1812,-622.5)"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0" stop-color="#fff" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient
+      id="gradShadow"
+      gradientUnits="userSpaceOnUse"
+      x1="566.635" y1="970.339"
+      x2="685.65" y2="851.324"
+    >
+      <stop offset="0" stop-color="#1a237e" stop-opacity=".4"/>
+      <stop offset="1" stop-color="#1a237e" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Parte inferior izquierda -->
+  <g clip-path="url(#clipA)">
+    <path d="M360.3 779.7L520 939.5 959.4 500H639.9z" fill="#39cefd"/>
+  </g>
+
+  <!-- Parte superior izquierda -->
+  <path
+    clip-path="url(#clipB)"
+    d="M639.9 20.7h319.5l-679 679.1L120.6 540z"
+    fill="#39cefd"
+  />
+
+  <!-- Parte inferior derecha -->
+  <path
+    clip-path="url(#clipC)"
+    d="M520 939.5l119.9 119.8h319.5L679.8 779.7z"
+    fill="#03569b"
+  />
+
+  <!-- Sombra diagonal -->
+  <path
+    clip-path="url(#clipD)"
+    d="M757 857.4l-77.2-77.7L520 939.5z"
+    fill="url(#gradShadow)"
+  />
+
+  <!-- Rombo central -->
+  <g clip-path="url(#clipD)">
+    <path
+      d="M360.3 779.6L520.1 619.8 679.9 779.6 520.1 939.5z"
+      fill="#16b9fd"
+    />
+  </g>
+
+  <!-- Overlay radial -->
+  <path
+    d="M959.4 500L679.8 779.7l279.6 279.7H639.9L360.2 779.7 639.9 500h319.5zM639.9 20.7L120.6 540l159.8 159.8 679-679.1H639.9z"
+    fill="url(#gradOverlay)"
+  />
+</svg>
